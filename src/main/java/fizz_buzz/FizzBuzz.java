@@ -8,35 +8,65 @@ package fizz_buzz;
  */
 public class FizzBuzz {
     int number;
-    String result1 = "FizzBuzz";
-    String result2 = "Fizz";
-    String result3 = "Buzz";
-    int result4 = number;
+    final String FIZZ_BUZZ = "FizzBuzz";
+    final String FIZZ = "Fizz";
+    final String BUZZ = "Buzz";
 
     public void checkResult(int number) {
-        Boolean a = number % 3 == 0 && number % 5 == 0;
-        Boolean b = number % 3 == 0 && !(number % 5 == 0);
-        Boolean c = number % 5 == 0 && !(number % 3 == 0);
-        Boolean d = !a && !b && !c;
 
-        if (a) {
-            System.out.println(result1);
+        Boolean divOf3 = number % 3 == 0 && !(number % 5 == 0);
+        Boolean divOf5 = number % 5 == 0 && !(number % 3 == 0);
+        Boolean divOf3And5 = number % 3 == 0 && number % 5 == 0;
+        Boolean other = !divOf3And5 && !divOf3 && !divOf5;
+
+        if (divOf3And5) {
+            System.out.println(FIZZ_BUZZ);
         };
-
-        if (b) {
-            System.out.println(result2);
+        if (divOf3) {
+            System.out.println(FIZZ);
         };
-
-        if (c) {
-            System.out.println(result3);
+        if (divOf5) {
+            System.out.println(BUZZ);
         };
-
-        if (d) {
-            System.out.println(result4);
-        };
-
+        if (other) {
+            System.out.println(number);
+        }
     }
 }
+//Fedor's
 
-
-
+//public class FizzBuzz {
+//    public static final String FIZZ = "Fizz";
+//    public static final String BUZZ = "Buzz";
+//
+//    public void printResult(int number) {
+//        System.out.println(getResult(number));
+//    }
+//    public String getResult(int number) {
+//        final boolean of3 = number % 3 == 0;
+//        final boolean of5 = number % 5 == 0;
+//        final StringBuilder result = new StringBuilder();
+//
+//        if (of3) {
+//            result.append(FIZZ);
+//        }
+//        if (of5) {
+//            result.append(BUZZ);
+//        }
+//        if (!of3 && !of5) {
+//            result.append(Integer.toString(number));
+//        }
+//        return result.toString();
+//    }
+//}
+//class Test {
+//    public static void main(String[] args) {
+//        FizzBuzz fizzBuzz = new FizzBuzz();
+//        fizzBuzz.printResult(0);
+//        fizzBuzz.printResult(15);
+//        fizzBuzz.printResult(75);
+//        fizzBuzz.printResult(3);
+//        fizzBuzz.printResult(5);
+//        fizzBuzz.printResult(19);
+//    }
+//}

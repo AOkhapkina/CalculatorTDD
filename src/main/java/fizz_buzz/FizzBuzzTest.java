@@ -19,6 +19,12 @@ public class FizzBuzzTest {
 
     @Test
     public void testFizzBuzz() {
-        fizzBuzz.checkResult(13);
+        fizzBuzz.checkResult(0);
+        fizzBuzz.checkResult(15);
+        fizzBuzz.checkResult(75);
+        fizzBuzz.checkResult(3);
+        fizzBuzz.checkResult(5);
+        fizzBuzz.checkResult(19);
+
     }
 }
