@@ -19,27 +19,19 @@ import java.sql.Array;
  */
 public class ArrayTask {
     public static void main(String[] args) {
-        int[] array = {1, -2, 10, -14, 33};
-        int x = 0;
-        int result;
+//        int[] array = {1, -2, 10, -14, 33};
+        int[] array = {14,-4,3,20,9};
         int sum = 0;
-
+        int x = -20;
         for (int i = 0; i < array.length; i++) {
-            sum += array[i] + x;
-            while (sum < 1) {
-//                for (x = 0;sum<1; x++)
-                    x=x+1;
-                break;
+            sum += array[i];
+            while ((sum + x) < 1) {
+                x++;
             }
+            System.out.println(sum);
+            System.out.println(x);
         }
-        System.out.println(sum);
     }
 }
 
-//class ArrayTest {
-////    public static void main(String[] args) {
-////        ArrayTask arrayTaskRezult = new ArrayTask();
-////        arrayTaskRezult.getX({1,-2,10,-14,33});
-////        }
-////    }
-//}
+
